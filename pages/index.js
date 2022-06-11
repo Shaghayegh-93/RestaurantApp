@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
-    <div class="px-4 ">
+    <div class=" ">
       <Head>
         <title>Restaurant App</title>
         <meta name="description" content="Best pizza shop in town" />
