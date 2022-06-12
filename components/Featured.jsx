@@ -27,8 +27,8 @@ const Featured = () => {
         <Image alt="arrow" src="/img/arrowl.png" layout="fill" />
       </div>
       <div
-        className="w-[300vw] h-full flex "
-        style={{ transform: `translateX(${-100 *slideIndex}vw)` }}
+        className="w-[300vw] h-full flex transition-all duration-[1.5s] ease-in-out  "
+        style={{ transform: `translateX(${-100 * slideIndex}vw)` }}
       >
         {images.map((img) => (
           <div className="h-full w-[100vw] relative" key={img.id}>
