@@ -5,15 +5,17 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex items-center justify-between bg-[#2b2929] text-white ">
-      <div className=" flex-1 relative ">
-        <img src="/img/footer.png" alt="" className="object-fill " />
+    <div className="flex  justify-between bg-[#2b2929] text-white ">
+      <div className="  flex-1 relative ">
+        <img src="/img/footer.png" alt="" className=" " />
       </div>
-      <div className="flex-1">
-        <div className="w-[17%] px-8 font-bold text-lg py-16">
-          <p> OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.</p>
+      <div className="flex-[2-2-0] flex px-[50px] justify-between  mt-10">
+        <div className=" px-5 font-bold text-lg flex-1">
+          <p className="w-[40%]">
+            OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
+          </p>
         </div>
-        <div className="flex-1 py-16 px-5 space-y-3">
+        <div className="flex-1 px-5 space-y-3 ">
           <h3 className="text-yellow-600 font-bold text-lg mb-3">
             FIND OUR RESTAURANTS
           </h3>
@@ -39,7 +41,7 @@ const Footer = () => {
           </p>
         </div>
         {/* last col */}
-        <div className="flex-1 py-16 px-5">
+        <div className="flex-1  px-5">
           <h3 className="text-yellow-600 font-bold text-lg mb-3">
             WORKING HOURS
           </h3>
