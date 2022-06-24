@@ -5,13 +5,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex  justify-between bg-[#2b2929] text-white ">
-      <div className="  flex-1 relative ">
-        <img src="/img/footer.png" alt="" className=" " />
+    <div className="flex  justify-between bg-[#2b2929] text-white w-full h-[calc(100vh-100px)]">
+      <div className="  flex-1 relative h-full ">
+        <img src="/img/footer.png" alt="" className="h-full" />
       </div>
-      <div className="flex-[2-2-0] flex px-[50px] justify-between  mt-10">
-        <div className=" px-5 font-bold text-lg flex-1">
-          <p className="w-[40%]">
+      <div className="flex-[2-2-0] flex p-[50px] justify-between  mt-10">
+        <div className=" px-5 font-bold text-lg flex-1 ">
+          <p className="">
             OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
           </p>
         </div>
