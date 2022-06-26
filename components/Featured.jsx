@@ -16,7 +16,6 @@ const Featured = () => {
       setSlideIndex(slideIndex !== 2 ? slideIndex + 1 : 0);
     }
   };
-  console.log("slideindex", slideIndex);
 
   return (
     <div className="h-[calc(100vh-100px)] bg-[#d1411e] overflow-hidden">
