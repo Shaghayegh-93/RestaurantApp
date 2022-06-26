@@ -93,7 +93,7 @@ const Product = () => {
             type="number"
             defaultValue={1}
           />
-          <button className="h-[30px] bg-[#d1411e] font-medium text-white cursor-pointer px-2">
+          <button className="h-[30px] bg-[#d1411e] font-medium text-white cursor-pointer px-2 ">
             Add to Cart
           </button>
         </div>
