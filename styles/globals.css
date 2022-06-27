@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .inProgress {
+    animation: inProgress 1s ease infinite alternate;
+  }
+  .inProgress :last-child {
+    display: none;
+  }
+  .undone :last-child {
+    display: none;
+    opacity: 0.3;
+  }
+  .done :last-child {
+    opacity: 1;
+  }
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
