@@ -46,7 +46,7 @@ const Cart = () => {
         </table>
       </div>
       <div className="flex-1 bg-[#333] text-white rounded-lg   ">
-        <div className="w-[90%] max-h-[300px]  p-[50px] pt-[10px] flex flex-col justify-between">
+        <div className=" max-h-[300px]  p-[50px] pt-[10px] flex flex-col justify-between">
           <h2 className="mb-4 font-semibold text-2xl">CART TOTAL</h2>
           <div>
             <b className="mr-[10px]">Subtotal:</b>$102.50
