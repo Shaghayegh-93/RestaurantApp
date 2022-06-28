@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @layer utilities {
   .inProgress {
     animation: inProgress 1s ease infinite alternate;
@@ -14,15 +23,6 @@
     opacity: 0.3;
   }
   .done :last-child {
-    opacity: 1;
-  }
-}
-
-@keyframes inProgress {
-  from {
-    opacity: 0;
-  }
-  to {
     opacity: 1;
   }
 }
