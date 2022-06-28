@@ -5,18 +5,18 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex  justify-between bg-[#2b2929] text-white w-full h-[calc(100vh-100px)]">
-      <div className="  flex-1 relative h-full ">
+    <div className="flex  justify-between bg-[#2b2929] text-white w-full h-auto text-center sm:text-left sm:h-[calc(100vh-100px)]">
+      <div className="hidden sm:flex  flex-1 relative h-full ">
         <img src="/img/footer.png" alt="" className="h-full" />
       </div>
-      <div className="flex-[2-2-0] flex p-[50px] justify-between  mt-10">
-        <div className=" px-5 font-bold text-lg flex-1 ">
-          <p className="">
+      <div className="flex-[2-2-0] flex-col sm:flex-row flex p-[50px] justify-between  mt-10">
+        <div className=" sm:px-5 font-bold text-lg flex-1 mb-5 sm:mb-0">
+          <p className="sm:w-[42%]">
             OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
           </p>
         </div>
-        <div className="flex-1 px-5 space-y-3 ">
-          <h3 className="text-yellow-600 font-bold text-lg mb-3">
+        <div className="flex-1 sm:px-5 space-y-3 mb-5 sm:mb-0">
+          <h3 className="text-yellow-600 font-bold sm:text-lg mb-3 text-3xl ">
             FIND OUR RESTAURANTS
           </h3>
           <p>
@@ -41,8 +41,8 @@ const Footer = () => {
           </p>
         </div>
         {/* last col */}
-        <div className="flex-1  px-5">
-          <h3 className="text-yellow-600 font-bold text-lg mb-3">
+        <div className="flex-1  sm:px-5 mb-5 sm:mb-0">
+          <h3 className="text-yellow-600 font-bold text-3xl sm:text-lg mb-3">
             WORKING HOURS
           </h3>
           <p>

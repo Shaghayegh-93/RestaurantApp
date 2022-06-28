@@ -4,10 +4,10 @@ import React from "react";
 
 const Cart = () => {
   return (
-    <div className="p-[50px] flex ">
+    <div className="p-5 sm:p-[50px] flex flex-col sm:flex-row ">
       <div className="flex-[2_2_0%]  ">
-        <table className="w-full border-separate [border-spacing:20px]  ">
-          <thead className="">
+        <table className="w-full border-separate [border-spacing:20px] felx flex-col items-center justify-center  ">
+          <thead className="hidden sm:flex">
             <tr>
               <th>Product</th>
               <th>Name</th>
@@ -18,28 +18,34 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody className="">
-            <tr className="text-center">
+            <tr className="text-center flex flex-col sm:flex-row justify-center items-center mb-5 sm:mb-0">
               <td className="flex items-center justify-center">
-                <div className=" w-[100px] h-[100px]  ">
+                <div className="w-[35vw] h-[35vw] sm:w-[100px] sm:h-[100px]  ">
                   <img src="/img/pizza.png" alt="pizza" className="" />
                 </div>
               </td>
-              <td className="">
-                <span className="font-medium text-lg text-[#d1411e]">
+              <td>
+                <span className="font-medium text-2xl sm:text-lg text-[#d1411e]">
                   CAMPAGNOLA
                 </span>
               </td>
-              <td className="">
-                <span>Double ingredient,Spicy Souce</span>
+              <td>
+                <span className="text-md">Double ingredient,Spicy Souce</span>
               </td>
               <td>
-                <span>$19.90</span>
+                <span className="text-lg before:content-['Price:'] before:font-medium ">
+                  $19.90
+                </span>
               </td>
               <td>
-                <span>2</span>
+                <span className="text-lg before:content-['Quantity:'] before:font-medium ">
+                  2
+                </span>
               </td>
               <td>
-                <span className="font-medium text-lg">39.80</span>
+                <span className="font-medium text-2xl sm:text-lg before:content-['Total:'] before:font-medium ">
+                  39.80
+                </span>
               </td>
             </tr>
           </tbody>
