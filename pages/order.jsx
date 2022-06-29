@@ -9,13 +9,13 @@ const Order = () => {
     return "undone ";
   };
   return (
-    <div className="p-[50px] flex flex-col sm:flex-row">
+    <div className="p-5 md:p-[50px] flex flex-col md:flex-row">
       <div className="flex-[2_2_0%]  ">
         <div>
           <div className="mb-6">
             <table className="w-full border-separate [border-spacing:20px]  ">
-              <thead className="hidden sm:flex">
-                <tr>
+              <thead className="">
+                <tr className="hidden md:table-row">
                   <th>Order ID</th>
                   <th>Customer</th>
                   <th>Address</th>
@@ -23,24 +23,24 @@ const Order = () => {
                 </tr>
               </thead>
               <tbody className="">
-                <tr className="text-center flex flex-col">
+                <tr className="md:text-center flex flex-col md:table-row items-center justify-center">
                   <td className="">
-                    <span className="text-lg before:content-['OrderID:'] before:font-medium ">
+                    <span className="text-lg before:content-['OrderID:'] before:font-medium before:md:hidden ">
                       111111111111
                     </span>
                   </td>
                   <td className="">
-                    <span className="text-lg before:content-['Customer:'] before:font-medium ">
+                    <span className="text-lg before:content-['Customer:'] before:font-medium before:md:hidden">
                       John Doe
                     </span>
                   </td>
                   <td>
-                    <span className="text-lg before:content-['Address:'] before:font-medium ">
+                    <span className="text-lg before:content-['Address:'] before:font-medium before:md:hidden ">
                       Elton st.212-33
                     </span>
                   </td>
                   <td>
-                    <span className="text-lg before:content-['Total:'] before:font-medium ">
+                    <span className="text-lg before:content-['Total:'] before:font-medium before:md:hidden  ">
                       $102.50
                     </span>
                   </td>
@@ -97,7 +97,7 @@ const Order = () => {
         </div>
       </div>
       <div className="flex-1 bg-[#333] text-white rounded-lg    ">
-        <div className="max-h-[300px] p-5 sm:p-[50px] pt-[10px] flex flex-col justify-between  ">
+        <div className="max-h-[300px] p-5  md:p-[50px] pt-[10px] flex flex-col justify-between  ">
           <h2 className="mb-4 font-semibold text-2xl">CART TOTAL</h2>
           <div>
             <b className="mr-[10px]">Subtotal:</b>$102.50

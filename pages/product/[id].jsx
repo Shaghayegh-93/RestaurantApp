@@ -11,21 +11,21 @@ const Product = () => {
   };
   const [size, setSize] = useState(0);
   return (
-    <div className="flex flex-col  sm:flex-row h-auto sm:h-[calc(100vh-100px)]">
-      <div className="flex-1 h-full flex items-center justify-center mt-5">
+    <div className="flex flex-col  md:flex-row h-auto ">
+      <div className="flex-1 h-full flex items-center justify-center mt-10">
         <div className="w-4/5 h-4/5 ">
           <img src={pizza.img} alt="pizzaImage" />
         </div>
       </div>
-      <div className="flex-1 p-5 mt-10 text-center sm:text-left">
-        <h2 className="font-extrabold text-2xl pb-1 sm:pb-5">{pizza.name}</h2>
+      <div className="flex-1 p-5 mt-10 text-center md:text-left">
+        <h2 className="font-extrabold text-2xl pb-1 md:pb-5">{pizza.name}</h2>
         <span className="text-[#d1411e] text-2xl font-normal border-b border-[#d1411e]">
           ${pizza.price[size]}
         </span>
         <p className="pt-5">{pizza.desc}</p>
         <h3 className="py-4 font-semibold text-xl">Choose the size</h3>
 
-        <div className="flex w-full px-5 sm:px-0 sm:w-[40%] justify-between">
+        <div className="flex w-full px-5 md:px-0 md:w-[60%] justify-between">
           <div
             className="w-[40px] h-[40px] cursor-pointer relative"
             onClick={() => setSize(0)}
@@ -58,28 +58,28 @@ const Product = () => {
         <h3 className="py-4 font-semibold text-xl">
           Choose aditional ingredient
         </h3>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-4 sm:space-y-0 text-lg sm:text-sm  mb-8">
-          <div className="flex sm:mr-3 items-center text-sm font-medium">
+        <div className="flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 text-lg md:text-sm  mb-8">
+          <div className="flex md:mr-3 items-center text-sm font-medium">
             <input
-              className=" w-6 h-6 sm:w-5 sm:h-5  mr-1"
+              className=" w-6 h-6 md:w-5 md:h-5  mr-1"
               id="double"
               type={"checkbox"}
               name="double"
             />
             <label htmlFor="double">Double ingredient</label>
           </div>
-          <div className="flex sm:mr-3 items-center text-sm font-medium">
+          <div className="flex md:mr-3 items-center text-sm font-medium">
             <input
-              className=" w-6 h-6 sm:w-5 sm:h-5 mr-1"
+              className=" w-6 h-6 md:w-5 md:h-5 mr-1"
               id="cheese"
               type={"checkbox"}
               name="cheese"
             />
             <label htmlFor="cheese">Extra Cheese</label>
           </div>
-          <div className="flex sm:mr-3 items-center text-sm font-medium">
+          <div className="flex md:mr-3 items-center text-sm font-medium">
             <input
-              className=" w-6 h-6 sm:w-5 sm:h-5 mr-1"
+              className=" w-6 h-6 md:w-5 md:h-5 mr-1"
               id="double"
               type={"checkbox"}
               name="spicy"
@@ -87,9 +87,9 @@ const Product = () => {
             <label htmlFor="double">Spicy Souce</label>
           </div>
 
-          <div className="flex  sm:mr-3 items-center text-sm font-medium">
+          <div className="flex  md:mr-3 items-center text-sm font-medium">
             <input
-              className=" w-6 h-6 sm:w-5 sm:h-5 mr-1 "
+              className=" w-6 h-6 md:w-5 md:h-5 mr-1 "
               id="garlic"
               type={"checkbox"}
               name="garlic"
@@ -100,11 +100,11 @@ const Product = () => {
 
         <div>
           <input
-            className="border border-slate-900 w-[50px] h-[50px] sm:h-[30px] py-[10px] px-5 sm:p-0  mr-2"
+            className="border border-slate-900 w-[50px] h-[50px] md:h-[30px] py-[10px] px-5 md:p-0  mr-2"
             type="number"
             defaultValue={1}
           />
-          <button className="h-[50px] sm:h-[30px] py-[10px] px-5 sm:py-0  bg-[#d1411e] font-medium text-white cursor-pointer sm:px-2 ">
+          <button className="h-[50px] md:h-[30px] py-[10px] px-5 md:py-0  bg-[#d1411e] font-medium text-white cursor-pointer md:px-2 ">
             Add to Cart
           </button>
         </div>
