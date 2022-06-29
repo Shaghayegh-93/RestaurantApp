@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -9,14 +8,14 @@ const Footer = () => {
       <div className="hidden sm:flex  flex-1 relative h-full ">
         <img src="/img/footer.png" alt="" className="h-full" />
       </div>
-      <div className="flex-[2-2-0] flex-col sm:flex-row flex p-[50px] justify-between  mt-10">
+      <div className="flex-[2_2_0] flex-col sm:flex-row flex p-[50px] justify-between  mt-10">
         <div className=" sm:px-5 font-bold text-lg flex-1 mb-5 sm:mb-0">
-          <p className="sm:w-[42%]">
+          <p className="lg:w-[42%]">
             OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
           </p>
         </div>
         <div className="flex-1 sm:px-5 space-y-3 mb-5 sm:mb-0">
-          <h3 className="text-yellow-600 font-bold sm:text-lg mb-3 text-3xl ">
+          <h3 className="text-yellow-600 font-bold text-lg mb-3 sm:text-3xl ">
             FIND OUR RESTAURANTS
           </h3>
           <p>
@@ -42,7 +41,7 @@ const Footer = () => {
         </div>
         {/* last col */}
         <div className="flex-1  sm:px-5 mb-5 sm:mb-0">
-          <h3 className="text-yellow-600 font-bold text-3xl sm:text-lg mb-3">
+          <h3 className="text-yellow-600 font-bold sm:text-3xl text-lg mb-3">
             WORKING HOURS
           </h3>
           <p>
