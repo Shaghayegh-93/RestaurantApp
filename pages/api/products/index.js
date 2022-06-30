@@ -9,12 +9,12 @@ export default async function handler(req, res) {
   dbConnect();
 
   if (method === "GET") {
-    // try {
-    //   const products = await Product.find();
-    //   res.status(200).json(products);
-    // } catch (err) {
-    //   res.status(500).json(err);
-    // }
+    try {
+      const products = await Product.find();
+      res.status(200).json(products);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
 
   if (method === "POST") {
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       const product = await Product.create(req.body);
       res.status(201).json(product);
     } catch (err) {
-      console.log("err", err);
+      // console.log("err", err);
       res.status(500).json(err);
     }
   }
