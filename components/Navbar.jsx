@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ menuHandler, open }) => {
+  const quantity = useSelector((state) => state.cart.quantity);
   return (
     <div className="flex items-center justify-between h-[100px]  bg-[#d1411e] p-[10px] lg:px-[50px] sticky top-0 z-10">
       {/* leftSide */}
@@ -111,7 +113,7 @@ const Navbar = ({ menuHandler, open }) => {
         <div className="relative">
           <Image alt="cart" src="/img/cart.png" width="30" height="30" />
           <div className=" absolute -top-[10px] -right-[10px] text-[#d1411e] bg-white w-5 h-5 rounded-full items-center justify-center flex font-bold">
-            2
+            {quantity}
           </div>
         </div>
       </div>
