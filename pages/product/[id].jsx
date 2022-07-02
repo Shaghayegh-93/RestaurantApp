@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import axios from "axios";
+// import { useSelector } from "react-redux";
 
 const Product = ({ pizza }) => {
   const [size, setSize] = useState(0);
