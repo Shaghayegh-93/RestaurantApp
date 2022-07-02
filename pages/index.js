@@ -1,11 +1,9 @@
+import axios from "axios";
 import Head from "next/head";
-import Image from "next/image";
 import Featured from "../components/Featured";
-import Footer from "../components/Footer";
 import PizzaList from "../components/PizzaList";
-import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ pizzaList }) {
   return (
     <div>
       <Head>
@@ -15,8 +13,16 @@ export default function Home() {
       </Head>
       <div>
         <Featured />
-        <PizzaList />
+        <PizzaList pizzaList={pizzaList} />
       </div>
     </div>
   );
+}
+export async function getStaticProps() {
+  const res = await axios.get("http://localhost:3000/api/products");
+  return {
+    props: {
+      pizzaList: res.data,
+    },
+  };
 }
