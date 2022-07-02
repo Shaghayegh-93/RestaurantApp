@@ -1,7 +1,7 @@
 import React from "react";
 import PizzaCard from "./PizzaCard";
 
-const PizzaList = () => {
+const PizzaList = ({ pizzaList }) => {
   return (
     <div className="py-5 px-[10px] flex flex-col items-center ">
       <h1 className="text-center font-bold text-3xl mb-8">
@@ -13,14 +13,9 @@ const PizzaList = () => {
         molestiae natus, asperiores alias. Modi, impedit cumque!
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-around w-full flex-wrap mt-8">
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
+        {pizzaList?.map((pizza) => (
+          <PizzaCard key={pizza._id} pizza={pizza} />
+        ))}
       </div>
     </div>
   );
