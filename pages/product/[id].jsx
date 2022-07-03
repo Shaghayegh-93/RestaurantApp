@@ -2,12 +2,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 // import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cartSlice";
 
 const Product = ({ pizza }) => {
   const [size, setSize] = useState(0);
   const [price, setPrice] = useState(pizza.prices[0]);
   const [extras, setExtras] = useState([]);
   const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch();
+  const addProductHandler = () => {
+    dispatch(addProduct({ ...pizza, price, quantity, extras }));
+  };
 
   const changePrice = (number) => {
     setPrice(price + number);
@@ -30,7 +37,7 @@ const Product = ({ pizza }) => {
   };
   return (
     <div className="flex flex-col  md:flex-row h-auto ">
-      <div className="flex-1 h-full flex items-center justify-center mt-10">
+      <div className="flex-1 h-full flex items-center justify-center my-10">
         <div className="w-4/5 h-4/5 ">
           <img src={pizza.img} alt="pizzaImage" />
         </div>
@@ -95,12 +102,15 @@ const Product = ({ pizza }) => {
         </div>
         <div>
           <input
-            className="border border-slate-900 w-[50px] h-[50px] md:h-[30px] py-[10px] px-5 md:p-0  mr-2"
+            className="border border-slate-900 w-[50px] h-[50px] md:h-[30px] py-[10px] px-5 md:p-0  mr-2 text-center"
             type="number"
             defaultValue={1}
             onChange={(e) => setQuantity(e.target.value)}
           />
-          <button className="h-[50px] md:h-[30px] py-[10px] px-5 md:py-0  bg-[#d1411e] font-medium text-white cursor-pointer md:px-2 ">
+          <button
+            className="h-[50px] md:h-[30px] py-[10px] px-5 md:py-0  bg-[#d1411e] font-medium text-white cursor-pointer md:px-2 "
+            onClick={addProductHandler}
+          >
             Add to Cart
           </button>
         </div>
