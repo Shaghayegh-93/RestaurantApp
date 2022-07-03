@@ -109,14 +109,16 @@ const Navbar = ({ menuHandler, open }) => {
       </div>
 
       {/* rightSide */}
-      <div className="hidden  flex-1 justify-end lg:flex items-center ">
-        <div className="relative">
-          <Image alt="cart" src="/img/cart.png" width="30" height="30" />
-          <div className=" absolute -top-[10px] -right-[10px] text-[#d1411e] bg-white w-5 h-5 rounded-full items-center justify-center flex font-bold">
-            {quantity}
+      <Link passHref href="/cart">
+        <div className="hidden  flex-1 justify-end lg:flex items-center cursor-pointer">
+          <div className="relative">
+            <Image alt="cart" src="/img/cart.png" width="30" height="30" />
+            <div className=" absolute -top-[10px] -right-[10px] text-[#d1411e] bg-white w-5 h-5 rounded-full items-center justify-center flex font-bold">
+              {quantity}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
