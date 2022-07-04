@@ -1,7 +1,9 @@
 import axios from "axios";
 import Head from "next/head";
 import Featured from "../components/Featured";
+import OrderDetail from "../components/OrderDetail";
 import PizzaList from "../components/PizzaList";
+import Portal from "../components/Portal";
 
 export default function Home({ pizzaList }) {
   return (
@@ -12,6 +14,9 @@ export default function Home({ pizzaList }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        <Portal selector="#myportal">
+          <OrderDetail />
+        </Portal>
         <Featured />
         <PizzaList pizzaList={pizzaList} />
       </div>
