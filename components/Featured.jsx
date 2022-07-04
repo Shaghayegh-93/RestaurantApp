@@ -18,7 +18,7 @@ const Featured = () => {
   };
 
   return (
-    <div className="h-[50vh] sm:h-[calc(100vh-100px)] bg-[#d1411e] overflow-hidden relative">
+    <div className="h-[50vh] lg:h-[calc(100vh-100px)] bg-[#d1411e] overflow-hidden relative">
       <div
         className=" w-[5%] h-[10%] absolute top-0 bottom-0 m-auto left-0 cursor-pointer z-10 "
         onClick={() => arrowHandler("l")}
