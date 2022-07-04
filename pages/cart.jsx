@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -12,20 +11,25 @@ import {
   PayPalButtons,
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
+import OrderDetail from "../components/OrderDetail";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
   const [open, setOpen] = useState(false);
-  const amount = "2";
+  const [cash, setCash] = useState(false);
+  const amount = cart.total;
   const currency = "USD";
   const style = { layout: "vertical" };
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
   const router = useRouter();
+  const cashHandler = () => {
+    cash && setCash(false);
+  };
 
   const createOrder = async (data) => {
     try {
-      const res = axios.post("http://localhost:3000/api/orders", data);
-      (res.status === 201) & router.push("/orders/+res.data._id");
+      const res = await axios.post("http://localhost:3000/api/orders", data);
+      res.status === 201 && router.push(`/orders/${res.data._id}`);
       dispatch(reset());
     } catch (error) {
       console.log(error);
@@ -49,7 +53,7 @@ const Cart = () => {
     }, [currency, showSpinner]);
 
     return (
-      <>
+      <div className="z-[5]">
         {showSpinner && isPending && <div className="spinner" />}
         <PayPalButtons
           style={style}
@@ -83,15 +87,17 @@ const Cart = () => {
                 total: cart.total,
                 method: 1,
               });
-              console.log("details", details);
             });
           }}
         />
-      </>
+      </div>
     );
   };
   return (
-    <div className="p-5 md:p-[50px] flex flex-col md:flex-row">
+    <div
+      className="p-5 md:p-[50px] flex flex-col md:flex-row  "
+      onClick={cashHandler}
+    >
       <div className="flex-[2_2_0%]  ">
         <table className=" w-full border-separate [border-spacing:20px]  ">
           <thead className=" ">
@@ -161,7 +167,10 @@ const Cart = () => {
           </div>
           {open ? (
             <div className="mt-[10px] flex flex-col">
-              <button className="cursor-pointer px-[5px] py-[10px] mb-[5px] bg-white text-[teal] font-bold rounded">
+              <button
+                className="cursor-pointer px-[5px] py-[10px] mb-[5px] bg-white text-[teal] font-bold rounded "
+                onClick={() => setCash(true)}
+              >
                 CASH ON DELIVERY
               </button>
               <PayPalScriptProvider
@@ -187,6 +196,7 @@ const Cart = () => {
           )}
         </div>
       </div>
+      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
     </div>
   );
 };
