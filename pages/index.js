@@ -14,9 +14,6 @@ export default function Home({ pizzaList }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <Portal selector="#myportal">
-          <OrderDetail />
-        </Portal>
         <Featured />
         <PizzaList pizzaList={pizzaList} />
       </div>
