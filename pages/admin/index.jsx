@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const Index = ({ productList, orderList }) => {
   const [pizzaList, setPizzaList] = useState(productList);
   const [orders, setOrders] = useState(orderList);
-  console.log("orders:", orders);
+
   const deleteHandler = async (id) => {
     try {
       const res = await axios.delete(
@@ -92,7 +92,20 @@ const Index = ({ productList, orderList }) => {
     </div>
   );
 };
-export async function getStaticProps() {
+export async function getStaticProps(context) {
+  // console.log(context.req);
+  // const myCookie = new universalCookie().get("token");
+  // console.log("mycookie", myCookie);
+
+  // if (myCookie !== process.env.TOKEN) {
+  //   return {
+  //     redirect: {
+  //       destination: "/admin/login",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
+
   const productRes = await axios.get("http://localhost:3000/api/products");
   const orderRes = await axios.get("http://localhost:3000/api/orders");
   return {
