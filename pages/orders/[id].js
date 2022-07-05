@@ -141,7 +141,6 @@ export async function getStaticProps({ params }) {
       order: res.data,
     },
   };
-  console.log("order:", order);
 }
 
 export default Order;
