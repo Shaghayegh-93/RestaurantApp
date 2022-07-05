@@ -12,6 +12,7 @@ import {
   usePayPalScriptReducer,
 } from "@paypal/react-paypal-js";
 import OrderDetail from "../components/OrderDetail";
+import Portal from "../components/Portal";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -196,7 +197,15 @@ const Cart = () => {
           )}
         </div>
       </div>
-      {cash && <OrderDetail total={cart.total} createOrder={createOrder} />}
+      {cash && (
+        <Portal selector="#myportal">
+          <OrderDetail
+            total={cart.total}
+            createOrder={createOrder}
+            cash={cash}
+          />
+        </Portal>
+      )}
     </div>
   );
 };
