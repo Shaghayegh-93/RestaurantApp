@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 
-const OrderDetail = ({ total, createOrder }) => {
+const OrderDetail = ({ total, createOrder, cash }) => {
   const [customer, setCustomer] = useState("");
   const [address, setAddress] = useState("");
 
   const clickHandler = () => {
     createOrder({ customer, total, address, method: 0 });
   };
+
   return (
-    <div className="w-full h-[100vh] flex items-center justify-center top-0 left-0 absolute bg-[#252424be] z-10  ">
+    <div className="w-full h-[100vh] flex items-center justify-center top-0 left-0 absolute bg-[#252424be] z-10 ">
       <div
-        className="w-[500px] bg-white rounded-lg p-[50px] flex flex-col items-center justify-center"
+        className="w-[500px] bg-white rounded-lg p-[50px] flex flex-col items-center justify-center "
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="font-bold text-2xl mb-2">
